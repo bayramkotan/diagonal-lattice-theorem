@@ -1,0 +1,408 @@
+/* ===== LAYOUT ===== */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+}
+
+/* ===== HEADER ===== */
+.app-header {
+  padding: 20px 28px 16px;
+  border-bottom: 1px solid var(--border-color);
+  background: linear-gradient(180deg, rgba(255, 94, 58, 0.03) 0%, transparent 100%);
+}
+
+.header-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.header-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0;
+}
+
+.header-subtitle {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.header-desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.header-university {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.header-university img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.5;
+}
+
+.header-university span {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* ===== MAIN LAYOUT ===== */
+.main-content {
+  display: flex;
+  flex: 1;
+}
+
+/* ===== CONTROLS PANEL ===== */
+.controls-panel {
+  width: 300px;
+  min-width: 300px;
+  padding: 24px;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+  max-height: calc(100vh - 80px);
+}
+
+/* Slider Controls */
+.control-group label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.35);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.slider-row input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent-orange);
+  height: 2px;
+  cursor: pointer;
+}
+
+.slider-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  min-width: 32px;
+  text-align: right;
+}
+
+/* Number input */
+.number-input-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.number-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 6px 10px;
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.number-input:focus {
+  border-color: var(--accent-orange);
+}
+
+.number-input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: var(--border-color);
+}
+
+/* ===== RESULT BOX ===== */
+.result-box {
+  background: rgba(255, 94, 58, 0.06);
+  border: 1px solid rgba(255, 94, 58, 0.15);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.result-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 10px;
+}
+
+.result-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--accent-orange);
+  line-height: 1;
+}
+
+.result-unit {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 6px;
+}
+
+/* ===== CALCULATION DETAILS ===== */
+.calc-details {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 2;
+}
+
+.calc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calc-row .value {
+  color: #fff;
+}
+
+.calc-row .value.cyan {
+  color: rgba(100, 210, 255, 0.8);
+}
+
+.calc-row .value.orange {
+  color: var(--accent-orange);
+  font-weight: 600;
+}
+
+.calc-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 2px 0;
+}
+
+/* ===== FORMULA SECTION ===== */
+.formula-toggle {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.formula-toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.formula-content {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.7;
+  padding: 0 4px;
+  animation: fadeIn 0.3s ease;
+}
+
+.formula-content p {
+  margin: 0 0 8px;
+}
+
+.formula-content strong {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.formula-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 14px 18px;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  margin: 10px 0;
+}
+
+/* ===== BUTTONS ===== */
+.animate-btn {
+  background: linear-gradient(135deg, #ff5e3a, #ff9500);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: all 0.3s;
+}
+
+.animate-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(255, 94, 58, 0.3);
+}
+
+.animate-btn:active {
+  transform: translateY(0);
+}
+
+.animate-btn.disabled {
+  background: rgba(255, 94, 58, 0.15);
+  color: rgba(255, 255, 255, 0.4);
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ===== PRESETS ===== */
+.presets-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.25);
+  margin-bottom: 8px;
+}
+
+.presets-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.preset-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 5px 10px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.preset-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.preset-btn.active {
+  background: rgba(255, 94, 58, 0.2);
+  border-color: rgba(255, 94, 58, 0.4);
+  color: var(--accent-orange);
+}
+
+/* ===== LEGEND ===== */
+.legend {
+  margin-top: auto;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.2);
+  line-height: 1.7;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.legend-dot.orange {
+  background: rgba(255, 94, 58, 0.6);
+}
+
+.legend-dot.cyan {
+  background: rgba(100, 210, 255, 0.6);
+  border-radius: 50%;
+}
+
+/* ===== CANVAS AREA ===== */
+.canvas-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: auto;
+  min-height: 450px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .controls-panel {
+    width: 100%;
+    min-width: 100%;
+    max-height: none;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .canvas-area {
+    min-height: 350px;
+    padding: 12px;
+  }
+
+  .header-title {
+    font-size: 18px;
+  }
+
+  .result-value {
+    font-size: 32px;
+  }
+
+  .slider-value {
+    font-size: 18px;
+  }
+}
